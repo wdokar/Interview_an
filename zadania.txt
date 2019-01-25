@@ -9,3 +9,7 @@ wyjście: [1,5,6,8,10]
 
 ZADANIE 3. Należy wygenerować listę liczb od 2 do 5.5 ze skokiem co 0.5.
 Dane wynikowe muszą być typu decimal.
+
+
+Otrzymanie wyniku Zadania 1:
+cmd: python task1.py > Score_task1.txt
