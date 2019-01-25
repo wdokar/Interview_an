@@ -16,7 +16,7 @@ class PostalCode:
         B3 = int(postalCodeB[1])
 
         if A2 > B2:
-            print('Sorry blad')
+            print('Sorry wrong value')
             return
 
         for k in range(A2, B2 + 1):
@@ -49,4 +49,4 @@ class PostalCode:
 
 
 viewScore = PostalCode()
-print((viewScore.generate_range()))
+print(viewScore.generate_range())
