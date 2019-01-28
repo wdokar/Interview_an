@@ -14,6 +14,7 @@ class PostalCode:
         A3 = int(postalCodeA[1])
         B2 = int(postalCodeB[0])
         B3 = int(postalCodeB[1])
+        my_file = open("output.txt", "w+")
 
         if A2 > B2:
             print('Sorry wrong value')
@@ -22,18 +23,21 @@ class PostalCode:
         for k in range(A2, B2 + 1):
             if k == A2:
                 for x in range(A3, 1000):
-                    self.print_code(k, x)
+                    my_file.write(self.print_code(k, x) + "\n")
 
                 continue
 
             if k == B2:
                 for y in range(0, B3 + 1):
-                    self.print_code(k, y)
+                    my_file.write(self.print_code(k, y) + "\n")
 
                 continue
 
             for i in range(0, 1000):
-                self.print_code(k, i)
+                my_file.write(self.print_code(k, i) + "\n")
+
+        my_file.flush()
+        my_file.close()
 
     def print_code(self, a, b):
         if a < 10:
@@ -45,8 +49,8 @@ class PostalCode:
         elif b < 100:
             b = "0" + str(b)
 
-        print("%s-%s" % (a, b))
+        return "%s-%s" % (a, b)
 
 
 viewScore = PostalCode()
-print(viewScore.generate_range())
+viewScore.generate_range()
